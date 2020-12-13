@@ -14,11 +14,21 @@ import java.util.Set;
 public class OrderDetails {
 
     @Id
-    @GeneratedValue
+    @Column(name="detail_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-    private int order_id;
+
+    @ManyToOne
+    @JoinColumn(name = "order_id")
+    private Order order_id;
+
     private int quantity;
-    private int product_id;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    private Product product_id;
+
+    private double sub_total;
 
 
 }

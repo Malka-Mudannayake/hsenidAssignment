@@ -13,7 +13,8 @@ import javax.persistence.*;
 public class Product {
 
     @Id
-    @GeneratedValue
+    @Column(name="product_id")
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
     private String name;
     private double price;
