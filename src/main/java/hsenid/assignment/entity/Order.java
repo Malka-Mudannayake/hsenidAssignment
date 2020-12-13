@@ -10,15 +10,13 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-public class Product {
+@Table(name = "orders")
+public class Order {
 
     @Id
     @GeneratedValue
     private int id;
-    private String name;
-    private double price;
-
-
-
+    private double total;
 
 }
+
